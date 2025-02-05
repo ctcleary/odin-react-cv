@@ -11,12 +11,14 @@ function CVGen() {
         'M.',
         'Last'
     ]);
-    const [summary, setSummary] = useState('Executive summary.');
     const [titles, setTitles] = useState('Web Developer | Princess | Cardshark');
     const [contactFields, setContactFields] = useState([
         { id: crypto.randomUUID(), label: 'Ph', value: '(555) 555-5555' },
         { id: crypto.randomUUID(), label: 'E', value: 'me@mysite.com' }
     ]);
+    const [summary, setSummary] = useState(
+        'Multifaceted powerhouse of fractal exponentiation with an infinitude mobius strip of skill and competence.'
+    );
 
     function setNameFields(first, middle, last) {
         setFullName([first, middle, last]);
@@ -117,9 +119,9 @@ function CVGen() {
                     </div>
                 </section>
                 <section id="output">
+                    <h2>Output CV</h2>
+                    <hr/>
                     <div className="output-cv-container">
-                        <h2>Output CV</h2>
-                        <hr/>
                         <div className="output-cv">
                             <h2>{fullName[0]} {fullName[1]} {fullName[2]}</h2>
                             <h3>{titles}</h3>
@@ -128,7 +130,7 @@ function CVGen() {
                             />
                             <hr />
                             <h3>Summary</h3>
-                            <p>{summary}</p>
+                            <p className="summary-output">{summary}</p>
                             <hr />
                             {/* <ul>
                             { 
