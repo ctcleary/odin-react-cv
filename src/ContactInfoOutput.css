@@ -1,0 +1,32 @@
+.contact-info-pair {
+    display: inline-block;
+}
+
+.divider {
+    margin: 0 0.5rem 0 0.5rem;
+}
+.contact-label {
+    margin-right: 0.25rem;
+}
+
+.contact-fields li {
+    display: list-item;
+}
+
+.contact-fields label {
+    display: inline-block;
+    max-width: 40%;
+}
+
+.contact-fields input {
+    display: inline-block;
+}
+.contact-fields span {
+    margin-right: 1rem;
+}
+.remove-button {
+    display: inline-block;
+    font-weight: 900;
+    background-color: red;
+    margin-left: 1rem;
+}

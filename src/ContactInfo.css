@@ -11,3 +11,13 @@
 .input-list-header div {
     display: inline-block;
 }
+
+.add-button button {
+    background: lightgreen;
+}
+
+.remove-button button {
+    background: darkred;
+    color: white;
+    font-weight: 900;
+}

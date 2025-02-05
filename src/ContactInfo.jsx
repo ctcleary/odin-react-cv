@@ -7,7 +7,7 @@ function ContactInfo({ headline, ulClassName, addContactField, contactFields, se
         <div className="input-list">
             <div className="input-list-header">
                 <h3>{headline}</h3>
-                <div>
+                <div className="add-button">
                     <button type="button"
                         onClick={addContactField}>
                             +

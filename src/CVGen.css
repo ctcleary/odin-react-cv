@@ -10,29 +10,19 @@
     padding: 3rem;
 }
 
+.name-field {
+    display: block;
+}
+
+.summary-textarea {
+    max-width: 80%;
+}
+
 .output-cv {
     padding: 3rem;
     background: white;
     outline: thin solid #ccc;
 }
 
-.contact-fields li {
-    display: list-item;
-}
 
-.contact-fields label {
-    display: inline-block;
-}
 
-.contact-fields input {
-    display: inline-block;
-}
-.contact-fields span {
-    margin-right: 1rem;
-}
-.remove-button {
-    display: inline-block;
-    font-weight: 900;
-    background-color: red;
-    margin-left: 1rem;
-}
