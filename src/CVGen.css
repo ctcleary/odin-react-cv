@@ -1,0 +1,38 @@
+.cv-gen-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.input-fields {
+    text-align: left;
+    display: block;
+    background: rgb(222, 221, 227);
+    padding: 3rem;
+}
+
+.output-cv {
+    padding: 3rem;
+    background: white;
+    outline: thin solid #ccc;
+}
+
+.contact-fields li {
+    display: list-item;
+}
+
+.contact-fields label {
+    display: inline-block;
+}
+
+.contact-fields input {
+    display: inline-block;
+}
+.contact-fields span {
+    margin-right: 1rem;
+}
+.remove-button {
+    display: inline-block;
+    font-weight: 900;
+    background-color: red;
+    margin-left: 1rem;
+}

@@ -1,0 +1,13 @@
+.input-list ul {
+    padding-left: 1.25rem;
+}
+
+.input-list-header h3 {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 0;
+}
+
+.input-list-header div {
+    display: inline-block;
+}
