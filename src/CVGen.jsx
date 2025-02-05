@@ -12,7 +12,7 @@ function CVGen() {
         'Last'
     ]);
     const [summary, setSummary] = useState('Executive summary.');
-    const [titles, setTitles] = useState('Web Developer | Princess | Cad');
+    const [titles, setTitles] = useState('Web Developer | Princess | Cardshark');
     const [contactFields, setContactFields] = useState([
         { id: crypto.randomUUID(), label: 'Ph', value: '(555) 555-5555' },
         { id: crypto.randomUUID(), label: 'E', value: 'me@mysite.com' }
@@ -59,23 +59,25 @@ function CVGen() {
                 <section id="input">
                     <div className="input-fields">
                         <h2>Input fields</h2>
+                        <hr />
                         <h3>Full Name</h3>
-                        <label className="name-field">
-                            First 
-                            <input type="text" value={fullName[0]} onChange={(e) => { setNameFields(e.target.value, fullName[1], fullName[2])}} />
-                        </label>
-                        <label className="name-field">
-                            Middle 
-                            <input type="text" value={fullName[1]} onChange={(e) => { setNameFields(fullName[0], e.target.value), fullName[2]}} />
-                        </label>
-                        <label className="name-field">
-                            Last 
-                            <input type="text" value={fullName[2]} onChange={(e) => { setNameFields(fullName[0], fullName[1], e.target.value)}} />
-                        </label>
+                        <div className="name-field">
+                            <label htmlFor="first-name" className="name-label">First</label>
+                            <input id="first-name" className="name-input" type="text" value={fullName[0]} onChange={(e) => { setNameFields(e.target.value, fullName[1], fullName[2])}} />
+                        </div>
+                        <div className="name-field">
+                            <label htmlFor="middle-name" className="name-label">Middle </label>
+                            <input id="middle-name" className="name-input" type="text" value={fullName[1]} onChange={(e) => { setNameFields(fullName[0], e.target.value), fullName[2]}} />
+                        </div>
+                        <div className="name-field">
+                            <label htmlFor="last-name" className="name-label">Last </label>    
+                            <input id="last-name" className="name-input" type="text" value={fullName[2]} onChange={(e) => { setNameFields(fullName[0], fullName[1], e.target.value)}} />
+                        </div>
+                        <hr />
                         <h3>Title(s)</h3>
                         <input className="titles" type="text" value={titles} onChange={(e) => { setTitles(e.target.value) }} />
-                        <h3>Summary</h3>
-                        <textarea className="summary-textarea" value={summary} onChange={(e) => { setSummary(e.target.value) }} />
+                        
+                        <hr />
 
                         <ContactInfo 
                                 headline="Contact Info"
@@ -85,6 +87,12 @@ function CVGen() {
                                 setContactField={setContactField}s
                                 removeContactField={removeContactField}
                             />
+                        <hr />
+
+                        <h3>Summary</h3>
+                        <textarea className="summary-textarea" value={summary} onChange={(e) => { setSummary(e.target.value) }} />
+
+                        <hr />
                         {/* <div>
                             <button type="button"
                                 onClick={addContactField}>
