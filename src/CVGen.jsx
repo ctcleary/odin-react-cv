@@ -17,7 +17,7 @@ function CVGen() {
         'M.',
         'Last'
     ]);
-    const [titles, setTitles] = useState('Web Developer | Princess | Cardshark');
+    const [titles, setTitles] = useState('Web Developer • Princess • Cardshark');
     const [contactFields, setContactFields] = useState([
         { id: crypto.randomUUID(), label: 'Ph', value: '(555) 555-5555' },
         { id: crypto.randomUUID(), label: 'E', value: 'me@mysite.com' },
