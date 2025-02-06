@@ -11,7 +11,7 @@ function SkillListOutput({ skillLists }) {
                     skillLists.map((obj) => {
                         return (
                             <div className="skill-list-pair" key={obj.id}>
-                                <span className="skill-list-label">{obj.label}:</span>
+                                <span className="skill-list-label">{obj.label}</span>
                                 <span className="skill-list-value">{obj.value}</span>
                             </div>
                         );

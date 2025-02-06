@@ -1,0 +1,23 @@
+#output-cv-references {
+    padding-bottom: 1rem;
+}
+
+.reference-output-list {
+    text-align: left;
+}
+.reference-output {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.reference-output:not(:last-of-type) {
+    margin-bottom: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-bottom: thin solid #ccc;
+}
+
+/* .reference-output .reference-name,
+.reference-output .reference-position,
+.reference-output .reference-contact {
+    display: inline-block;
+} */

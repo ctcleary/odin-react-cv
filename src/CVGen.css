@@ -8,6 +8,8 @@
 #top-level-headline {
     border-bottom: thin solid black;
     background: white;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
 }
 
 .input-fields {
@@ -35,6 +37,9 @@
     min-height: 110px;
     max-width: 90%;
 }
+.summary-text-output {
+    text-align: left;
+}
 
 textarea {
     border: 2px solid black;
@@ -43,9 +48,15 @@ textarea {
 }
 
 
+#output>h2 {
+    margin-top: 1rem;
+}
 
 
 .output-cv-container {
+    position: sticky;
+    top: 1rem;
+
     width: 980px;
     margin: 0 auto;
 }
@@ -53,7 +64,7 @@ textarea {
 .output-cv {
     padding: 3rem;
     background: white;
-    outline: thin solid #ccc;
+    border: thin solid #ccc;
 }
 
 .output-cv h2,
@@ -63,6 +74,17 @@ textarea {
     margin-bottom: 0;
 }
 
-.summary-output {
+.summary-text-output {
     margin-top: 0;
+}
+
+
+.output-header,
+.output-summary,
+.output-skills,
+.output-work-experience
+{
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.25rem;
+    border-bottom: thin solid #777;
 }

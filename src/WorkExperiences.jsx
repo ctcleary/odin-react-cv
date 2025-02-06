@@ -1,6 +1,14 @@
 import './WorkExperiences.css';
 
-function WorkExperiences({ addWorkExperience, data, setWorkExperience, removeWorkExperience }) {
+function WorkExperiences({
+    addWorkExperience, 
+    data,
+    setWorkEmployer,
+    setWorkTitle,
+    setWorkDateStart,
+    setWorkDateEnd,
+    setWorkDetails,
+    removeWorkExperience }) {
 
 
     return (
@@ -22,11 +30,11 @@ function WorkExperiences({ addWorkExperience, data, setWorkExperience, removeWor
                                 <div className="input-row">
                                     <label>
                                         <span>Employer #{i}</span>
-                                        <input type="text" value={obj.employer} onChange={(e) => {  }} placeholder="Microfirm" />
+                                        <input type="text" value={obj.employer} onChange={(e) => { setWorkEmployer(obj.id, e.target.value); }} placeholder="Microfirm" />
                                     </label>
                                     <label>
                                         <span>Title #{i}</span>
-                                        <input type="text" value={obj.title} onChange={(e) => { }} placeholder="Engineer" />
+                                        <input type="text" value={obj.title} onChange={(e) => { setWorkTitle(obj.id, e.target.value); }} placeholder="Engineer" />
                                     </label>
                                     <div className="remove-button">
                                         <button type="button" 
@@ -38,16 +46,16 @@ function WorkExperiences({ addWorkExperience, data, setWorkExperience, removeWor
                                 <div className="input-row">
                                     <label>
                                         <span>Start Date #{i}</span>
-                                        <input type="date" value={obj.dateStart} onChange={(e) => {  }} placeholder="Microfirm" />
+                                        <input type="date" value={obj.dateStart} onChange={(e) => { setWorkDateStart(obj.id, e.target.value); }} placeholder="Microfirm" />
                                     </label>
                                     <label>
                                         <span>End Date #{i}</span>
-                                        <input type="date" value={obj.dateEnd} onChange={(e) => { }} placeholder="Engineer" />
+                                        <input type="date" value={obj.dateEnd} onChange={(e) => { setWorkDateEnd(obj.id, e.target.value); }} placeholder="Engineer" />
                                     </label>
                                 </div>
                                 <div className="input-row">
                                     <div>Details</div>
-                                    <textarea className="work-expereince-details-input" value={obj.details} onChange={(e) => { }} placeholder="Shineboxed the reams of analysis junctures." />
+                                    <textarea className="work-expereince-details-input" value={obj.details} onChange={(e) => { setWorkDetails(obj.id, e.target.value); }} placeholder="Shineboxed the reams of analysis junctures." />
                                 </div>
                             </li>
                         );

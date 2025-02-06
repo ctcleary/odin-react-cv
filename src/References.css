@@ -1,0 +1,54 @@
+.reference-input ul {
+    padding-left: 1.25rem;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.reference-header h3 {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 0;
+}
+
+.reference-header div {
+    display: inline-block;
+}
+
+.add-button button {
+    background: lightgreen;
+}
+
+.remove-button {
+    display: inline-block;
+}
+
+.remove-button button {
+    background: darkred;
+    color: white;
+    font-weight: 900;
+    margin-left: 1rem;
+    /* width: 10%; */
+}
+
+.reference-inputs li {
+    display: list-item;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: thin solid #ccc;
+}
+
+.reference-inputs label:first-of-type {
+    display: inline-block;
+}
+
+.reference-inputs label {
+    display: block;
+    max-width: 40%;
+}
+
+.reference-inputs input {
+    display: inline-block;
+}
+.reference-inputs span {
+    margin-right: 1rem;
+}
