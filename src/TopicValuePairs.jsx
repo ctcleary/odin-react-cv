@@ -1,6 +1,6 @@
 import './TopicValuePairs.css';
 
-function TopicValuePairs({ headline, addInput, data, setTopicValuePair, removeTopicValuePair, topicPlaceholder, valuePlaceholder }) {
+function TopicValuePairs({ headline, labelLabel, valueLabel, addInput, data, setTopicValuePair, removeTopicValuePair, topicPlaceholder, valuePlaceholder }) {
 
 
     return (
@@ -20,11 +20,11 @@ function TopicValuePairs({ headline, addInput, data, setTopicValuePair, removeTo
                         return (
                             <li key={obj.id}>
                                 <label>
-                                    <span>Label #{i}</span>
+                                    <span>{labelLabel} #{i}</span>
                                     <input type="text" value={obj.label} onChange={(e) => { setTopicValuePair(obj.id, e.target.value, obj.value); }} placeholder={topicPlaceholder} />
                                 </label>
                                 <label>
-                                    <span>Value #{i}</span>
+                                    <span>{valueLabel} #{i}</span>
                                     <input type="text" value={obj.value} onChange={(e) => { setTopicValuePair(obj.id, obj.label, e.target.value); }} placeholder={valuePlaceholder}/>
                                 </label>
                                 <div className="remove-button">

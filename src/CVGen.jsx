@@ -3,6 +3,7 @@ import './CVGen.css'
 // import ContactInfo from './ContactInfo';
 import TopicValuePairs from './TopicValuePairs';
 import ContactInfoOutput from './ContactInfoOutput';
+import SkillListOutput from './SkillListOutput';
 import { useState } from "react";
 
 
@@ -15,14 +16,15 @@ function CVGen() {
     const [titles, setTitles] = useState('Web Developer | Princess | Cardshark');
     const [contactFields, setContactFields] = useState([
         { id: crypto.randomUUID(), label: 'Ph', value: '(555) 555-5555' },
-        { id: crypto.randomUUID(), label: 'E', value: 'me@mysite.com' }
+        { id: crypto.randomUUID(), label: 'E', value: 'me@mysite.com' },
     ]);
     const [summary, setSummary] = useState(
         'Multifaceted powerhouse of fractal exponentiation with an infinitudinous mobius strip of skill and competence. Sizzling example of a radiant star willing to steel down and buck up in the face of adversarial surface tension. An uncompromising insistence on excelsior standards and system-spanning ontology, and willing to heighten the parameters without reverance.'
     );
     const [skillLists, setSkillLists] = useState([
-        { id: crypto.randomUUID(), label: 'Front End', value: 'javascript, html, css, react' },
-        { id: crypto.randomUUID(), label: 'Royal', value: 'decrees, court politics, formal dances' }
+        { id: crypto.randomUUID(), label: 'Front End', value: 'Javascript, HTML, CSS, ReactJS' },
+        { id: crypto.randomUUID(), label: 'Royal', value: 'decrees, court politics, formal dances' },
+        { id: crypto.randomUUID(), label: 'Card Tricks', value: 'is this your card?' },
     ]);
 
     const [workExperiences, setWorkExperiences] = useState([
@@ -124,7 +126,7 @@ function CVGen() {
             <div className="cv-gen-wrapper">
                 <section id="input">
                     <div className="input-fields">
-                        <h2>Input fields</h2>
+                        <h2>CV Data Input</h2>
                         <hr />
                         <h3>Full Name</h3>
                         <div className="name-field">
@@ -147,6 +149,8 @@ function CVGen() {
 
                         <TopicValuePairs 
                                 headline="Contact Info"
+                                labelLabel="Type"
+                                valueLabel="Contact Info"
                                 ulClassName="contact-fields-inputs"
                                 addInput={addContactField}
                                 data={contactFields}
@@ -164,6 +168,8 @@ function CVGen() {
 
                         <TopicValuePairs 
                                 headline="Skill Lists"
+                                labelLabel="Topic"
+                                valueLabel="Skill List"
                                 ulClassName="skill-lists-inputs"
                                 addInput={addSkillList}
                                 data={skillLists}
@@ -194,7 +200,9 @@ function CVGen() {
                             <h3>Summary</h3>
                             <p className="summary-output">{summary}</p>
                             <hr />
-                            
+                            <SkillListOutput
+                                skillLists={skillLists}
+                            />
                         </div>
                     </div>
                 </section>

@@ -2,6 +2,11 @@
     display: inline-block;
 }
 
+.contact-info-pair:not(:last-child)::after {
+    content: '|';
+    margin: 0 0.5rem;
+}
+
 .contact-info-pair .contact-label {
     margin-right: 0.25rem;
 
