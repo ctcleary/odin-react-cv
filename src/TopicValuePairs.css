@@ -1,0 +1,47 @@
+.input-list ul {
+    padding-left: 1.25rem;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.input-list-header h3 {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 0;
+}
+
+.input-list-header div {
+    display: inline-block;
+}
+
+.add-button button {
+    background: lightgreen;
+}
+
+.remove-button {
+    display: inline-block;
+}
+
+.remove-button button {
+    background: darkred;
+    color: white;
+    font-weight: 900;
+    margin-left: 1rem;
+    /* width: 10%; */
+}
+
+.topic-value-inputs li {
+    display: list-item;
+}
+
+.topic-value-inputs label {
+    display: inline-block;
+    max-width: 40%;
+}
+
+.topic-value-inputs input {
+    display: inline-block;
+}
+.topic-value-inputs span {
+    margin-right: 1rem;
+}

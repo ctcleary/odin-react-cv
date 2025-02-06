@@ -1,6 +1,6 @@
-import './ContactInfo.css';
+import './TopicValuePairs.css';
 
-function ContactInfo({ headline, ulClassName, addContactField, contactFields, setContactField, removeContactField }) {
+function TopicValuePairs({ headline, addInput, data, setTopicValuePair, removeTopicValuePair, topicPlaceholder, valuePlaceholder }) {
 
 
     return (
@@ -9,31 +9,27 @@ function ContactInfo({ headline, ulClassName, addContactField, contactFields, se
                 <h3>{headline}</h3>
                 <div className="add-button">
                     <button type="button"
-                        onClick={addContactField}>
-                            +
+                        onClick={addInput}>
+                            + Add new pair
                     </button>
                 </div>
             </div>
-            <ul className={ulClassName}>
-                {/* <li>
-                    <div className="contact-label-header">Contact Info Label</div>
-                    <div className="contact-value-header">Contact Info Value</div>
-                </li> */}
+            <ul className="topic-value-inputs">
                 { 
-                    contactFields.map((obj, i) => {
+                    data.map((obj, i) => {
                         return (
                             <li key={obj.id}>
                                 <label>
                                     <span>Label #{i}</span>
-                                    <input type="text" value={obj.label} onChange={(e) => { setContactField(obj.id, e.target.value, obj.value); }} placeholder="Ph" />
+                                    <input type="text" value={obj.label} onChange={(e) => { setTopicValuePair(obj.id, e.target.value, obj.value); }} placeholder={topicPlaceholder} />
                                 </label>
                                 <label>
                                     <span>Value #{i}</span>
-                                    <input type="text" value={obj.value} onChange={(e) => { setContactField(obj.id, obj.label, e.target.value); }} placeholder="(555) 555-5555"/>
+                                    <input type="text" value={obj.value} onChange={(e) => { setTopicValuePair(obj.id, obj.label, e.target.value); }} placeholder={valuePlaceholder}/>
                                 </label>
                                 <div className="remove-button">
                                     <button type="button" 
-                                        onClick={() => removeContactField(obj.id)}>
+                                        onClick={() => removeTopicValuePair(obj.id)}>
                                             -
                                     </button>
                                 </div>
@@ -46,4 +42,4 @@ function ContactInfo({ headline, ulClassName, addContactField, contactFields, se
     );
 }
 
-export default ContactInfo;
+export default TopicValuePairs;

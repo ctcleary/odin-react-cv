@@ -1,6 +1,7 @@
 import './CVGen.css'
 // import InputList from './InputList';
-import ContactInfo from './ContactInfo';
+// import ContactInfo from './ContactInfo';
+import TopicValuePairs from './TopicValuePairs';
 import ContactInfoOutput from './ContactInfoOutput';
 import { useState } from "react";
 
@@ -17,11 +18,49 @@ function CVGen() {
         { id: crypto.randomUUID(), label: 'E', value: 'me@mysite.com' }
     ]);
     const [summary, setSummary] = useState(
-        'Multifaceted powerhouse of fractal exponentiation with an infinitude mobius strip of skill and competence.'
+        'Multifaceted powerhouse of fractal exponentiation with an infinitudinous mobius strip of skill and competence. Sizzling example of a radiant star willing to steel down and buck up in the face of adversarial surface tension. An uncompromising insistence on excelsior standards and system-spanning ontology, and willing to heighten the parameters without reverance.'
     );
+    const [skillLists, setSkillLists] = useState([
+        { id: crypto.randomUUID(), label: 'Front End', value: 'javascript, html, css, react' },
+        { id: crypto.randomUUID(), label: 'Royal', value: 'decrees, court politics, formal dances' }
+    ]);
+
+    const [workExperiences, setWorkExperiences] = useState([
+        {
+            id: crypto.randomUUID(),
+            employer: 'Sassafras Techno', 
+            title: 'Front End Interloper', 
+            dateStart: '2020-10-01', dateEnd: '2023-10-31', 
+            detailsList: [
+                'Progenitized the simulacra-balanced symphone tressels in under 10 months.',
+                'Collaboradic and systemic meta-design constructed from simu-frags, improving quark percentage by 38%.',
+                'Spearheaded initiative to low-thrum the tensor pylons in the CRM backlog.'
+            ]
+        },
+        {
+            id: crypto.randomUUID(),
+            employer: 'BubbleTree Systems', 
+            title: 'Experiential Consult', 
+            dateStart: '2012-02-01', dateEnd: '2020-07-31', 
+            detailsList: [
+                'Forecasted unpredictive emissions of neuro-flash with a success rate of 78%.',
+                'Improved open faced subtextual motherboarding productivity by 4x.',
+                'Cusped the question-matrix into offshore, tantamount egress into quantized bundt units.'
+            ]
+        },
+
+    ])
 
     function setNameFields(first, middle, last) {
         setFullName([first, middle, last]);
+    }
+
+
+    function addContactField() {
+        setContactFields([
+            ...contactFields, 
+            { id: crypto.randomUUID(), label: '', value: '' }
+        ])
     }
 
     function setContactField(id, label, value) {
@@ -39,13 +78,6 @@ function CVGen() {
         setContactFields(copy);
     }
 
-    function addContactField() {
-        setContactFields([
-            ...contactFields, 
-            { id: crypto.randomUUID(), label: '', value: '' }
-        ])
-    }
-
     function removeContactField(id) {
         setContactFields(
             contactFields.filter((obj) => {
@@ -54,9 +86,41 @@ function CVGen() {
         );
     }
 
+    
+
+    function addSkillList() {
+        setSkillLists([
+            ...skillLists,
+            { id: crypto.randomUUID(), label: '', value: ''}
+        ])
+    }
+
+    function setSkillList(id, label, value) {
+        const foundSkillListObj = skillLists.find((obj) => {
+            return obj.id === id;
+        });
+        const copy = skillLists.slice();
+
+        copy.splice(
+            copy.indexOf(foundSkillListObj),
+            1,
+            { id: id, label: label, value: value }
+        );
+
+        setSkillLists(copy);
+    }
+
+    function removeSkillList(id) {
+        setSkillLists(
+            skillLists.filter((obj) => {
+                return obj.id !== id;
+            })
+        );
+    }
+
     return (
         <>
-            <h1>The Odin Project - React CV Generator Assignment</h1>
+            <h1 id="top-level-headline">The Odin Project - React CV Generator Assignment</h1>
             <div className="cv-gen-wrapper">
                 <section id="input">
                     <div className="input-fields">
@@ -69,7 +133,7 @@ function CVGen() {
                         </div>
                         <div className="name-field">
                             <label htmlFor="middle-name" className="name-label">Middle </label>
-                            <input id="middle-name" className="name-input" type="text" value={fullName[1]} onChange={(e) => { setNameFields(fullName[0], e.target.value), fullName[2]}} />
+                            <input id="middle-name" className="name-input" type="text" value={fullName[1]} onChange={(e) => { setNameFields(fullName[0], e.target.value, fullName[2]) }} />
                         </div>
                         <div className="name-field">
                             <label htmlFor="last-name" className="name-label">Last </label>    
@@ -81,13 +145,15 @@ function CVGen() {
                         
                         <hr />
 
-                        <ContactInfo 
+                        <TopicValuePairs 
                                 headline="Contact Info"
-                                ulClassName="contact-fields"
-                                addContactField={addContactField}
-                                contactFields={contactFields}
-                                setContactField={setContactField}s
-                                removeContactField={removeContactField}
+                                ulClassName="contact-fields-inputs"
+                                addInput={addContactField}
+                                data={contactFields}
+                                setTopicValuePair={setContactField}
+                                removeTopicValuePair={removeContactField}
+                                topicPlaceholder="Ph:"
+                                valuePlaceholder="(555) 555-5555"
                             />
                         <hr />
 
@@ -95,32 +161,28 @@ function CVGen() {
                         <textarea className="summary-textarea" value={summary} onChange={(e) => { setSummary(e.target.value) }} />
 
                         <hr />
-                        {/* <div>
-                            <button type="button"
-                                onClick={addContactField}>
-                                    +
-                            </button>
-                        </div> */}
-                        {/* <div>
-                            <InputList 
-                                headline="Contact Info"
-                                fieldName="Contact Info"
-                                ulClassName="contact-fields"
-                                addContactField={addContactField}
-                                contactFields={contactFields}
-                                setContactField={setContactField}
-                                setContactFields={setContactFields}
-                                removeContactField={removeContactField}
+
+                        <TopicValuePairs 
+                                headline="Skill Lists"
+                                ulClassName="skill-lists-inputs"
+                                addInput={addSkillList}
+                                data={skillLists}
+                                setTopicValuePair={setSkillList}
+                                removeTopicValuePair={removeSkillList}
+                                topicPlaceholder="Front End"
+                                valuePlaceholder="Javascript, HTML, CSS, React"
                             />
-                        </div> */}
-                        {/* <ul className="contact-fields">
-                            { contactFieldsEls }
-                        </ul> */}
+
+                        <hr/>
+
+                        <h3>Work Experience</h3>
+                            {/* <WorkExperiences /> */}
+                        
+                        <hr/>
                     </div>
                 </section>
                 <section id="output">
                     <h2>Output CV</h2>
-                    <hr/>
                     <div className="output-cv-container">
                         <div className="output-cv">
                             <h2>{fullName[0]} {fullName[1]} {fullName[2]}</h2>
@@ -132,16 +194,7 @@ function CVGen() {
                             <h3>Summary</h3>
                             <p className="summary-output">{summary}</p>
                             <hr />
-                            {/* <ul>
-                            { 
-                                contactFields.map((obj) => {
-                                    console.log(obj);
-                                    return (
-                                        <li key={obj.id}>{obj.label}: {obj.value}</li>
-                                    );
-                                }) 
-                            }
-                            </ul> */}
+                            
                         </div>
                     </div>
                 </section>
