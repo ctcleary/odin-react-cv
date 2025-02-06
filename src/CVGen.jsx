@@ -2,8 +2,10 @@ import './CVGen.css'
 // import InputList from './InputList';
 // import ContactInfo from './ContactInfo';
 import TopicValuePairs from './TopicValuePairs';
+import WorkExperiences from './WorkExperiences';
 import ContactInfoOutput from './ContactInfoOutput';
 import SkillListOutput from './SkillListOutput';
+import WorkExperiencesOutput from './WorkExperiencesOutput';
 import { useState } from "react";
 
 
@@ -24,7 +26,7 @@ function CVGen() {
     const [skillLists, setSkillLists] = useState([
         { id: crypto.randomUUID(), label: 'Front End', value: 'Javascript, HTML, CSS, ReactJS' },
         { id: crypto.randomUUID(), label: 'Royal', value: 'decrees, court politics, formal dances' },
-        { id: crypto.randomUUID(), label: 'Card Tricks', value: 'is this your card?' },
+        { id: crypto.randomUUID(), label: 'Card Tricks', value: '"Is this your card?" & fool-making' },
     ]);
 
     const [workExperiences, setWorkExperiences] = useState([
@@ -33,22 +35,18 @@ function CVGen() {
             employer: 'Sassafras Techno', 
             title: 'Front End Interloper', 
             dateStart: '2020-10-01', dateEnd: '2023-10-31', 
-            detailsList: [
-                'Progenitized the simulacra-balanced symphone tressels in under 10 months.',
-                'Collaboradic and systemic meta-design constructed from simu-frags, improving quark percentage by 38%.',
-                'Spearheaded initiative to low-thrum the tensor pylons in the CRM backlog.'
-            ]
+            details: '• Progenitized the simulacra-balanced symphone tressels in under 10 months. \n' +
+                '• Collaboradic and systemic meta-design constructed from simu-frags, improving quark percentage by 38%. \n' +
+                '• Spearheaded initiative to low-thrum the tensor pylons in the CRM backlog.'
         },
         {
             id: crypto.randomUUID(),
             employer: 'BubbleTree Systems', 
-            title: 'Experiential Consult', 
+            title: 'Existential Consult', 
             dateStart: '2012-02-01', dateEnd: '2020-07-31', 
-            detailsList: [
-                'Forecasted unpredictive emissions of neuro-flash with a success rate of 78%.',
-                'Improved open faced subtextual motherboarding productivity by 4x.',
-                'Cusped the question-matrix into offshore, tantamount egress into quantized bundt units.'
-            ]
+            details: '• Forecasted unpredictive emissions of neuro-flash with a success rate of 78%.\n' +
+                '• Improved open faced subtextual motherboarding productivity by 4x.\n' +
+                '• Cusped the question-matrix into offshore, tantamount egress into quantized bundt units.'
         },
 
     ])
@@ -181,8 +179,12 @@ function CVGen() {
 
                         <hr/>
 
-                        <h3>Work Experience</h3>
-                            {/* <WorkExperiences /> */}
+                        <WorkExperiences 
+                            addWorkExperience={()=>{}}
+                            data={workExperiences}
+                            setWorkExperience={()=>{}}
+                            removeWorkExperience={()=>{}}
+                        />
                         
                         <hr/>
                     </div>
@@ -202,6 +204,9 @@ function CVGen() {
                             <hr />
                             <SkillListOutput
                                 skillLists={skillLists}
+                            />
+                            <WorkExperiencesOutput
+                                workExperiences={workExperiences}
                             />
                         </div>
                     </div>

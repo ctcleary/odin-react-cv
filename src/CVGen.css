@@ -36,6 +36,12 @@
     max-width: 90%;
 }
 
+textarea {
+    border: 2px solid black;
+    border-radius: 6px;
+    padding: 0.5rem;
+}
+
 
 
 

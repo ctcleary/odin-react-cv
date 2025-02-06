@@ -1,0 +1,21 @@
+#output-cv-skills {
+    padding-bottom: 1rem;
+    border-bottom: thin solid #777;
+}
+.skill-list-pair {
+    display: grid;
+    grid-template-columns: 20% 80%;
+
+    text-align: left;
+    margin: 0 auto;
+    width: 700px;
+}
+.skill-list-pair:not(:last-child) {
+    border-bottom: thin solid #ccc;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.skill-list-label {
+    font-weight: 900;
+}

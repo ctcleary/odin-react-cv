@@ -1,0 +1,32 @@
+#output-cv-skills {
+    padding-bottom: 1rem;
+    border-bottom: thin solid #777;
+}
+.work-experience {
+    /* display: grid;
+    grid-template-columns: 20% 80%; */
+
+    text-align: left;
+    margin: 0 auto;
+    width: 90%;
+}
+.work-experience:not(:last-child) {
+    border-bottom: thin solid #ccc;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.work-experience-employer,
+.work-experience-title,
+.work-experience-date-range
+{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.work-experience-employer {
+    font-size: 1.25rem;
+}
+.work-experience-title {
+    font-size: 1.1rem;
+}

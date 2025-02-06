@@ -1,0 +1,24 @@
+.work-experience-inputs li {
+    display: list-item;
+    border-bottom: thin solid #777;
+    padding-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.work-experience-inputs label {
+    display: inline-block;
+    max-width: 40%;
+}
+
+.work-experience-inputs input {
+    display: inline-block;
+}
+.work-experience-inputs span {
+    margin-right: 1rem;
+}
+
+.work-expereince-details-input {
+    width: 400px;
+    min-height: 110px;
+    max-width: 90%;
+}
