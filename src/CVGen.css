@@ -15,7 +15,7 @@
 .input-fields {
     text-align: left;
     display: block;
-    background: rgb(222, 221, 227);
+    background: rgb(229, 225, 235);
     padding: 3rem;
 
     max-width: 600px;
@@ -23,6 +23,7 @@
 
 .name-field {
     display: block;
+    margin-bottom: 0.5rem;
 }
 .name-label {
     display:inline-block;
@@ -50,16 +51,19 @@ textarea {
 
 #output>h2 {
     margin-top: 1rem;
+    color: white;
 }
 
 
-.output-cv-container {
+#output-cv-container {
     position: sticky;
     top: 1rem;
 
-    width: 980px;
+    width: 720px;
     margin: 0 auto;
     margin-bottom: 2rem;
+
+    font-size: 0.9rem;
 }
 
 .output-cv {
@@ -88,4 +92,15 @@ textarea {
     padding-bottom: 0.25rem;
     margin-bottom: 0.25rem;
     border-bottom: thin solid #777;
+}
+
+@media print {
+    #top-level-headline,
+    #input,
+    #output>h2 {
+        display: none;
+    }
+    .output-cv {
+        border: none;
+    }
 }

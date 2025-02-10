@@ -20,6 +20,46 @@ h1, h2, h3 {
 input {
   height: 1.5rem;
   border-radius: 5px;
+  border-width: thin;
   /* min-width: 50ch; */
 }
 
+textarea {
+  border-width: thin;
+}
+
+.add-button button {
+  cursor: pointer;
+  padding: 5px;
+  border-width: thin;
+  border-radius: 6px;
+  background: rgb(90, 235, 90);
+}
+
+.add-button button:hover {
+  background: rgb(110, 254, 110);
+}
+
+.add-button button:active {
+  background: rgb(69, 207, 69);
+}
+
+.remove-button button {
+  cursor: pointer;
+  padding: 3px 10px;
+  border-width: thin;
+  border-radius: 6px;
+  background: rgb(224, 33, 33);
+  color: white;
+  font-weight: 900;
+  margin-left: 1rem;
+  /* width: 10%; */
+}
+
+.remove-button button:hover {
+  background: rgb(247, 55, 55);
+}
+
+.remove-button button:active {
+  background: rgb(195, 24, 24);
+}

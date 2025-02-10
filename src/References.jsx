@@ -25,7 +25,7 @@ function References({ addReference, data, setReference, removeReference }) {
                                 </label>
                                 <div className="remove-button">
                                     <button type="button" 
-                                        onClick={() => removeReference(obj.id)}>
+                                        onClick={() => removeReference(obj.id) }>
                                             -
                                     </button>
                                 </div>

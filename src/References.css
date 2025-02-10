@@ -14,21 +14,10 @@
     display: inline-block;
 }
 
-.add-button button {
-    background: lightgreen;
-}
-
 .remove-button {
     display: inline-block;
 }
 
-.remove-button button {
-    background: darkred;
-    color: white;
-    font-weight: 900;
-    margin-left: 1rem;
-    /* width: 10%; */
-}
 
 .reference-inputs li {
     display: list-item;

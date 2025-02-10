@@ -7,7 +7,7 @@
 
     text-align: left;
     margin: 0 auto;
-    width: 700px;
+    width: 90%;
 }
 .skill-list-pair:not(:last-child) {
     border-bottom: thin solid #ccc;

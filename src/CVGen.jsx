@@ -38,25 +38,25 @@ function CVGen() {
             employer: 'Sassafras Techno', 
             title: 'Front End Interloper', 
             dateStart: '2020-10-01', dateEnd: '2023-10-31', 
-            details: '• Progenitized the simulacra-balanced symphone tressels in under 10 months.' +
-                '• Collaboradic and systemic meta-design constructed from simu-frags, improving quark percentage by 38%.' +
-                '• Spearheaded initiative to low-thrum the tensor pylons in the CRM backlog.'
+            details: '• Progenitized the simulacra-balanced symphone tressels in under 10 months. ' +
+                '• Collaboradic and systemic meta-design constructed from simu-frags, improving quark percentage by 38%. ' +
+                '• Spearheaded initiative to low-thrum the tensor pylons in the CRM backlog. '
         },
         {
             id: crypto.randomUUID(),
             employer: 'BubbleTree Systems', 
             title: 'Existential Consult', 
             dateStart: '2012-02-01', dateEnd: '2020-07-31', 
-            details: '• Forecasted unpredictive emissions of neuro-flash with a success rate of 78%.' +
-                '• Improved open faced subtextual motherboarding productivity by 4x.' +
-                '• Cusped the question-matrix into offshore, tantamount egress into quantized bundt units.'
+            details: '• Forecasted unpredictive emissions of neuro-flash with a success rate of 78%. ' +
+                '• Improved open faced subtextual motherboarding productivity by 4x. ' +
+                '• Cusped the question-matrix into offshore, tantamount egress into quantized bundt units. '
         },
 
     ]);
     const [references, setReferences] = useState([
-        { name: 'Tawniton Jemini', position: 'TestKitWatch - Fire Marshal', contact: 'tjemini@testkitwatch.fake.com'},
-        { name: 'Koobaby Watchout', position: 'HomeGoods - Tissue Paper Specialist', contact: 'koobaby@hg.fake.com'},
-        { name: 'The Fir', position: 'Forest God', contact: 'thefir@firmament.fake.com'},
+        { id: crypto.randomUUID(), name: 'Tawniton Jemini', position: 'TestKitWatch - Fire Marshal', contact: 'tjemini@testkitwatch.fake.com'},
+        { id: crypto.randomUUID(), name: 'Koobaby Watchout', position: 'HomeGoods - Tissue Paper Specialist', contact: 'koobaby@hg.fake.com'},
+        { id: crypto.randomUUID(), name: 'The Fir', position: 'Forest God', contact: 'thefir@firmament.fake.com'},
     ])
 
     function setNameFields(first, middle, last) {
@@ -230,8 +230,8 @@ function CVGen() {
     function addReference() {
         setReferences([
             ...references,
-            { name: '', position: '', contact: ''}
-        ])
+            { id: crypto.randomUUID(), name: '', position: '', contact: ''}
+        ]);
     }
 
     function removeReference(id) {
@@ -239,7 +239,7 @@ function CVGen() {
             references.filter((obj) => {
                 return obj.id !== id;
             })
-        )
+        );
     }
 
     function setReference(id, name, position, contact) {
@@ -341,7 +341,7 @@ function CVGen() {
                 </section>
                 <section id="output">
                     <h2>Output CV</h2>
-                    <div className="output-cv-container">
+                    <div id="output-cv-container">
                         <div className="output-cv">
                             <header className="output-header">
                                 <h2>{fullName[0]} {fullName[1]} {fullName[2]}</h2>

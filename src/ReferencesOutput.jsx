@@ -4,7 +4,7 @@ function ReferencesOutput({ references }) {
 
     return references.length <= 0 ? ( <></> ) :
         (
-        <div id="output-cv-reference">
+        <div id="output-cv-references">
             <h3>References</h3>
             <div className="reference-output-list">
                 { 
